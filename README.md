@@ -54,7 +54,7 @@ UCEC_Personalized_Medicine/
 
 ### 1. Data Acquisition
 
-**File: `scripts/data_acquisition.py`**
+**File: `data_acquisition.py`**
 
 This script is responsible for downloading genomic data from the TCGA database.
 
@@ -84,7 +84,7 @@ download_tcga_data(project, data_type, output_dir)
 
 ### 2. Data Preprocessing
 
-**File: `scripts/data_preprocessing.py`**
+**File: `data_preprocessing.py`**
 
 This script normalizes the gene expression data.
 
@@ -114,7 +114,7 @@ normalized_df.to_csv('../data/normalized_gene_expression.csv', index=True)
 
 ### 3. Feature Selection and Engineering
 
-**File: `scripts/feature_selection.py`**
+**File: `feature_selection.py`**
 
 This script performs feature selection using ANOVA F-test.
 
@@ -145,7 +145,7 @@ selected_features_df.to_csv('../data/selected_features.csv', index=True)
 
 ### 4. Machine Learning Model Development
 
-**File: `scripts/model_training.py`**
+**File: `model_training.py`**
 
 This script trains a RandomForestClassifier on the selected features.
 
@@ -188,7 +188,7 @@ joblib.dump(rf_model, '../models/rf_model.joblib')
 
 ### 5. Deployment
 
-**File: `scripts/app.py`**
+**File: `app.py`**
 
 This script creates a Flask web application to serve the trained model for real-time predictions.
 
