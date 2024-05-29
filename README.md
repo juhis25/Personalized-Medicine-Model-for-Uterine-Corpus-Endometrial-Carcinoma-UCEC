@@ -26,32 +26,6 @@ This document provides a detailed explanation of each script used in the UCEC Pe
 
 ```
 
-## Project Structure
-
-```
-UCEC_Personalized_Medicine/
-│
-├── data/
-│   ├── TCGA-UCEC_Gene_Expression_Quantification.tsv
-│   ├── labels.csv
-│   ├── normalized_gene_expression.csv
-│   └── selected_features.csv
-│
-├── models/
-│   └── rf_model.joblib
-│
-├── scripts/
-│   ├── data_acquisition.py
-│   ├── data_preprocessing.py
-│   ├── feature_selection.py
-│   ├── model_training.py
-│   └── app.py
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
 Scripts
 
 ### 1. Data Acquisition
