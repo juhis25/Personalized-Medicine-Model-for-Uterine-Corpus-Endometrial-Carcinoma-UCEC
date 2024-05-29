@@ -24,6 +24,8 @@ Certainly! Below is the entire content formatted in markdown:
 
 This document provides a detailed explanation of each script used in the UCEC Personalized Medicine Framework project.
 
+```
+
 ## Project Structure
 
 ```
@@ -50,7 +52,7 @@ UCEC_Personalized_Medicine/
 └── requirements.txt
 ```
 
-## Scripts
+Scripts
 
 ### 1. Data Acquisition
 
