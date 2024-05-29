@@ -231,7 +231,4 @@ flask
 requests
 ```
 
-## Conclusion
 
-This document provides a detailed explanation of each script and the steps involved in developing and deploying a personalized medicine framework for UCEC. By following these steps, you can reproduce the project and customize it for your specific needs.
-```
