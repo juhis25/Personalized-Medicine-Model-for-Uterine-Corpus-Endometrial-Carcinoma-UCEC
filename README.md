@@ -16,8 +16,7 @@ To run this project, you need to have Python installed. Use the package manager 
 
 ```bash
 pip install -r requirements.txt
-
-Certainly! Below is the entire content formatted in markdown:
+```
 
 ```markdown
 # Detailed Explanation of Scripts
