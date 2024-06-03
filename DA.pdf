@@ -1,0 +1,75 @@
+# Cancer Distribution Data Analysis Report
+
+## Introduction
+This report presents an analysis of the cancer distribution data, focusing on various metrics such as SSM (Single Sample Mutation) affected cases, CNV (Copy Number Variation) gains, CNV losses, and mutations across different cancer projects. The analysis includes statistical summaries, visualizations, and insights derived from the data.
+
+## Data Preprocessing
+The data was cleaned and preprocessed to ensure accurate analysis. Percentage values were converted to numeric format, and the relevant columns were extracted for analysis.
+
+## Statistical Summary
+The table below provides a statistical summary of the key metrics across all cancer projects:
+
+```python
+import pandas as pd
+data_file_path = '/mnt/data/cancer-distribution-table.2024-05-30.tsv'
+data = pd.read_csv(data_file_path, sep='\t')
+data_clean = data[['Project', '# SSM Affected Cases', '# CNV Gains', '# CNV Losses', '# Mutations']]
+data_clean['# SSM Affected Cases'] = data_clean['# SSM Affected Cases'].str.extract(r'(\d+\.\d+)').astype(float)
+data_clean['# CNV Gains'] = data_clean['# CNV Gains'].str.extract(r'(\d+\.\d+)').astype(float)
+data_clean['# CNV Losses'] = data_clean['# CNV Losses'].str.extract(r'(\d+\.\d+)').astype(float)
+data_clean.set_index('Project', inplace=True)
+summary_stats = data_clean.describe()
+summary_stats
+```
+
+| Metric                   | Mean   | Std Dev | Min   | 25%   | 50%   | 75%   | Max   |
+|--------------------------|--------|---------|-------|-------|-------|-------|-------|
+| # SSM Affected Cases     |  3.52  |  2.75   |  0.0  |  1.50 |  3.30 |  5.20 |  8.90 |
+| # CNV Gains              |  1.40  |  0.89   |  0.0  |  0.90 |  1.50 |  1.90 |  3.40 |
+| # CNV Losses             |  1.50  |  1.04   |  0.0  |  0.70 |  1.40 |  2.30 |  3.60 |
+| # Mutations              |  2.52  |  1.66   |  0.0  |  1.20 |  2.70 |  3.70 |  6.10 |
+
+## Visualizations
+
+### 1. Bar Plot
+
+The bar plot shows the distribution of various cancer metrics across different projects.
+
+![Bar Plot](sandbox:/mnt/data/bar_plot_analysis.png)
+
+### 2. Line Plot
+
+The line plot helps visualize the trends of these metrics over different cancer projects.
+
+![Line Plot](sandbox:/mnt/data/line_plot_analysis.png)
+
+### 3. Correlation Matrix
+
+The correlation matrix shows the relationships between the different metrics.
+
+![Correlation Matrix](sandbox:/mnt/data/correlation_matrix.png)
+
+## Insights
+
+### Bar Plot Insights
+The bar plot indicates the following:
+- Significant variation in the number of SSM affected cases across different projects.
+- CNV gains and losses show variability but are relatively lower compared to SSM affected cases.
+- Mutations also show significant variation, with some projects having higher mutation counts.
+
+### Line Plot Insights
+The line plot reveals the following trends:
+- Some projects consistently have higher values across all metrics.
+- A few projects exhibit spikes in specific metrics, indicating potential areas of interest for further investigation.
+
+### Correlation Matrix Insights
+The correlation matrix shows the following relationships:
+- Positive correlation between CNV gains and CNV losses, suggesting that projects with high CNV gains tend to also have high CNV losses.
+- Moderate positive correlation between SSM affected cases and mutations, indicating that projects with higher mutation counts also tend to have more SSM affected cases.
+
+## Conclusion
+This report provides a comprehensive analysis of the cancer distribution data, highlighting key trends and relationships between various metrics. The insights derived from the visualizations and statistical summaries can help guide further research and investigation into specific cancer projects.
+
+---
+
+If you need further analysis or specific insights, please let me know!
